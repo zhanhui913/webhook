@@ -1,6 +1,17 @@
-var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello Zhan this is new\n');
-}).listen(8080, '45.33.42.219');
-console.log('Server running at http://45.33.42.219:8080/');
+var express = require('express');
+
+
+var port = process.env.PORT || 3000;
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
+app.get('/', function(req, res){
+    res.send('Welcome to my linode server!');
+});
+
+app.listen(port, function(){
+    console.log('NodeJS is running my app on PORT: ' + port);
+});
+
+module.exports = app;
