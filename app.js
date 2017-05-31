@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 app.get('/', function(req, res){
-    res.send('Welcome to my linode server!');
+    res.send('Welcome to my nodejs app in a linode server!');
 });
 
 var server = app.listen(port, ip, function(){
