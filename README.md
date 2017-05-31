@@ -7,14 +7,33 @@ https://www.linode.com/docs/security/securing-your-server
 Setup nodejs on ubuntu server
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
 
-To ensure nodejs app is restarted whenever there's a crash with app, changes in file or directories or subdirectories, or system reboot.
-Install pm2 , sudo npm install -g pm2
-Add app.js to pm2, pm2 start app.js --name 'budgetApp' --watch
+To ensure nodejs app is restarted whenever there's a crash with app, changes in file or directories or subdirectories, or system reboot:
+
+Install pm2
+```sh
+sudo npm install -g pm2
+```
+
+Add app.js to pm2
+```sh
+pm2 start app.js --name 'budgetApp' --watch
+```
+
 The --watch automatically restarts your app when a file changes in the current directory or its subdirectories.
 
 When the system reboots, have it startup your app.
+```sh
 pm2 startup
+```
 
 copy the path outputted in terminal after above command.
 
-Save all running process so pm2 can remember, pm2 save
+Save all running process so pm2 can remember
+```sh
+pm2 save
+```
+
+Reboot server
+```sh
+sudo reboot
+```
