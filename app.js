@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 var port = process.env.PORT || 8080;
-var ip = '127.0.0.1';
+var ip = '45.33.42.219';
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
